@@ -1,5 +1,7 @@
+import * as AntD from 'ant-design-vue'
+import { addComponent } from '@nuxt/kit'
+
 export default defineNuxtConfig({
-  ssr: false,
   css: [
     '~/assets/css/tailwind.css',
     'ant-design-vue/dist/antd.css',
@@ -32,6 +34,17 @@ export default defineNuxtConfig({
         },
       },
     ],
+    async () => {
+      for (const key in AntD) {
+        if (['version', 'install'].includes(key))
+          continue
+        await addComponent({
+          filePath: 'ant-design-vue',
+          name: `A${key}`,
+          export: key,
+        })
+      }
+    },
   ],
   typescript: {
     strict: true,
