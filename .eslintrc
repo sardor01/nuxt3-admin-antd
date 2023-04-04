@@ -1,3 +1,8 @@
 {
-  "extends": "@antfu"
+  "extends": "@antfu",
+  "rules": {
+    "no-console": "warn",
+    "antfu/if-newline": "off",
+    "antfu/top-level-function": "off"
+  }
 }

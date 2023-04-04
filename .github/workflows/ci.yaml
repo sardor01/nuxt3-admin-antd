@@ -1,13 +1,5 @@
 name: CI
 
-# on:
-#   push:
-#     branches:
-#       - main
-
-#   pull_request:
-#     branches:
-#       - main
 on: workflow_dispatch
 
 env:
@@ -28,7 +20,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Lint
-        run: pnpm lint:fix
+        run: pnpm lint
 
   typecheck:
     runs-on: ubuntu-latest
