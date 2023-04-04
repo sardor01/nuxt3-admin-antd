@@ -20,12 +20,12 @@ const backfaceVisibility = plugin(({ addUtilities }) => {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './components/**/*.{js,vue,ts}',
+    './components/**/*.{vue,ts}',
     './layouts/**/*.vue',
     './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}',
     './app.vue',
+    './nuxt.config.ts',
+    './error.vue',
   ],
   theme: {
     colors: {
@@ -49,46 +49,6 @@ module.exports = {
       success: '#04d65c',
       warning: '#ffb131',
     },
-    fontFamily: {
-      sans: ['Inter', 'sans-serif'],
-      serif: ['Roboto Slab', 'serif'],
-    },
-    extend: {
-      fontSize: {
-        '2.5xl': ['1.75rem', '2.125rem'],
-        '3.5xl': ['2rem', '2.375rem'],
-        '0.5xs': ['0.625rem', '0.75rem'],
-      },
-      minWidth: {
-        'xs': '20rem',
-        'sm': '24rem',
-        'md': '28rem',
-        'lg': '32rem',
-        'xl': '36rem',
-        '2xl': '42rem',
-        '3xl': '48rem',
-        '4xl': '56rem',
-        '5xl': '64rem',
-        '6xl': '72rem',
-        '7xl': '80rem',
-      },
-      minHeight: {
-        8: '2rem',
-        10: '2.5rem',
-        11: '2.75rem',
-        12: '3rem',
-        14: '3.5rem',
-      },
-      zIndex: {
-        modal: '1000',
-      },
-    },
   },
-  plugins: [
-    backfaceVisibility,
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [backfaceVisibility, require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 }
