@@ -1,4 +1,4 @@
-import { addComponent, defineNuxtModule } from '@nuxt/kit'
+import { addComponent, defineNuxtModule } from 'nuxt/kit'
 import * as AntD from 'ant-design-vue'
 
 export default defineNuxtModule({

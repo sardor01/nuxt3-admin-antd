@@ -1,12 +1,12 @@
 export default defineNuxtConfig({
-  css: ['~/assets/css/tailwind.css'],
+  css: [
+    '~/assets/css/tailwind.css',
+    'ant-design-vue/dist/antd.css',
+  ],
   modules: [
-    '~/modules/antdv',
     [
       '@pinia/nuxt',
-      {
-        autoImports: ['acceptHMRUpdate', 'defineStore', 'storeToRefs'],
-      },
+      { autoImports: ['defineStore', 'storeToRefs'] },
     ],
     [
       '@nuxtjs/i18n',
